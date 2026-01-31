@@ -2,8 +2,10 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/spf13/cobra"
+	"github.com/tiyfiy/BackItUp/internal/config"
 	"github.com/tiyfiy/BackItUp/internal/mongodb"
 )
 
@@ -20,6 +22,17 @@ func init() {
 }
 
 func backupMongodb(cmd *cobra.Command, args []string) {
-	fmt.Println("mongodb...")
-	mongodb.ConnectionMongodb()
+	fmt.Println("Backing up mongodb...")
+
+	cfg, err := config.Load()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	client, err := mongodb.Connection(cfg.MongoDB.URI)
+	if err != nil {
+		fmt.Println("error from the connection")
+	}
+
+	mongodb.Backup(client, cfg.MongoDB.URI)
 }
