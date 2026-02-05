@@ -110,3 +110,63 @@ func SetMongodbPath(path string) {
 		}
 	}
 }
+
+func SetMySQLHost(host string) {
+	viper.Set("MYSQL_HOST", host)
+
+	err := viper.WriteConfig()
+	if err != nil {
+		err = viper.SafeWriteConfig()
+		if err != nil {
+			log.Fatal("Failed to save config:", err)
+		}
+	}
+}
+
+func SetMySQLPort(port string) {
+	viper.Set("MYSQL_PORT", port)
+
+	err := viper.WriteConfig()
+	if err != nil {
+		err = viper.SafeWriteConfig()
+		if err != nil {
+			log.Fatal("Failed to save config:", err)
+		}
+	}
+}
+
+func SetMySQLUser(user string) {
+	viper.Set("MYSQL_USER", user)
+
+	err := viper.WriteConfig()
+	if err != nil {
+		err = viper.SafeWriteConfig()
+		if err != nil {
+			log.Fatal("Failed to save config:", err)
+		}
+	}
+}
+
+func SetMySQLPassword(password string) {
+	viper.Set("MYSQL_PASSWORD", password)
+
+	err := viper.WriteConfig()
+	if err != nil {
+		err = viper.SafeWriteConfig()
+		if err != nil {
+			log.Fatal("Failed to save config:", err)
+		}
+	}
+}
+
+func SetMySQLDatabase(database string) {
+	viper.Set("MYSQL_DB", database)
+
+	err := viper.WriteConfig()
+	if err != nil {
+		err = viper.SafeWriteConfig()
+		if err != nil {
+			log.Fatal("Failed to save config:", err)
+		}
+	}
+}
