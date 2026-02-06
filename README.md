@@ -67,3 +67,7 @@ Backups go to `BACKUP/postgresql/`
 ## Config
 
 Settings are saved in `config.yaml` in the current directory. You can also edit this file directly if you want.
+
+---
+
+https://roadmap.sh/projects/database-backup-utility
