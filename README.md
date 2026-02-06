@@ -1,6 +1,6 @@
 # BackItUp
 
-Simple CLI tool for backing up databases. Currently supports MongoDB and MySQL.
+Simple CLI tool for backing up databases. Currently supports MongoDB, MySQL, and PostgreSQL.
 
 ## Installation
 
@@ -44,6 +44,25 @@ Run backup:
 ```
 
 Backups go to `BACKUP/mysql/`
+
+### PostgreSQL
+
+Configure your connection:
+
+```bash
+./BackItUp postgresql --config --host localhost
+./BackItUp postgresql --config --user postgres
+./BackItUp postgresql --config --password yourpassword
+./BackItUp postgresql --config --database dbname
+```
+
+Run backup:
+
+```bash
+./BackItUp postgresql
+```
+
+Backups go to `BACKUP/postgresql/`
 
 ## Config
 

@@ -170,3 +170,63 @@ func SetMySQLDatabase(database string) {
 		}
 	}
 }
+
+func SetPostgreSQLHost(host string) {
+	viper.Set("POSTGRES_HOST", host)
+
+	err := viper.WriteConfig()
+	if err != nil {
+		err = viper.SafeWriteConfig()
+		if err != nil {
+			log.Fatal("Failed to save config:", err)
+		}
+	}
+}
+
+func SetPostgreSQLPort(port string) {
+	viper.Set("POSTGRES_PORT", port)
+
+	err := viper.WriteConfig()
+	if err != nil {
+		err = viper.SafeWriteConfig()
+		if err != nil {
+			log.Fatal("Failed to save config:", err)
+		}
+	}
+}
+
+func SetPostgreSQLUser(user string) {
+	viper.Set("POSTGRES_USER", user)
+
+	err := viper.WriteConfig()
+	if err != nil {
+		err = viper.SafeWriteConfig()
+		if err != nil {
+			log.Fatal("Failed to save config:", err)
+		}
+	}
+}
+
+func SetPostgreSQLPassword(password string) {
+	viper.Set("POSTGRES_PASSWORD", password)
+
+	err := viper.WriteConfig()
+	if err != nil {
+		err = viper.SafeWriteConfig()
+		if err != nil {
+			log.Fatal("Failed to save config:", err)
+		}
+	}
+}
+
+func SetPostgreSQLDatabase(database string) {
+	viper.Set("POSTGRES_DB", database)
+
+	err := viper.WriteConfig()
+	if err != nil {
+		err = viper.SafeWriteConfig()
+		if err != nil {
+			log.Fatal("Failed to save config:", err)
+		}
+	}
+}
