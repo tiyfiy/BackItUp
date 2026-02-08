@@ -28,6 +28,19 @@ Check the installed version:
 ./BackItUp version
 ```
 
+## Configuration Status
+
+Check your current configuration for all databases:
+```bash
+./BackItUp status
+```
+
+This displays:
+- Connection settings for MongoDB, MySQL, and PostgreSQL
+- Which databases are configured and ready to use
+- Password masking for security
+- Location of config file
+
 ## List Backups
 
 View all available backups with sizes and timestamps:
