@@ -95,7 +95,39 @@ The cleanup command helps you:
 - Maintain retention policies
 - Preview changes with `--dry-run` before actual deletion
 
+## Backup All Databases
+
+Backup all configured databases with a single command:
+
+```bash
+./BackItUp backup-all
+```
+
+This will:
+- Backup all configured databases (MongoDB, MySQL, PostgreSQL)
+- Skip databases that aren't configured
+- Show a summary of successes, failures, and skipped databases
+- Display total time taken
+
+Perfect for scheduled backups!
+
+## Automated Scheduling
+
+Get help setting up automated backups with cron:
+
+```bash
+./BackItUp schedule
+```
+
+This displays:
+- Ready-to-use cron expressions
+- Examples for daily, weekly, monthly backups
+- Instructions for setting up crontab
+- Pro tips for combining with cleanup
+
 ## Usage
+
+**Note:** All backups are now automatically timestamped to prevent overwrites!
 
 ### MongoDB
 

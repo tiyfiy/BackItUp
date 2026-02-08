@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"time"
 )
 
 func Backup(db *sql.DB, host, port, user, password, database string) {
@@ -16,7 +17,12 @@ func Backup(db *sql.DB, host, port, user, password, database string) {
 		log.Fatal(err)
 	}
 
-	outfile := fmt.Sprintf("%s/%s.sql", path, database)
+	// Add timestamp to filename to prevent overwrites
+	now := time.Now()
+	timestamp := fmt.Sprintf("%d-%02d-%02d_%02d-%02d-%02d",
+		now.Year(), now.Month(), now.Day(),
+		now.Hour(), now.Minute(), now.Second())
+	outfile := fmt.Sprintf("%s/%s_%s.sql", path, database, timestamp)
 
 	cmd := exec.Command("pg_dump",
 		"-h", host,
@@ -33,5 +39,5 @@ func Backup(db *sql.DB, host, port, user, password, database string) {
 		log.Fatal(err)
 	}
 
-	fmt.Println("backup completed")
+	fmt.Printf("✅ Backup completed: %s\n", outfile)
 }
