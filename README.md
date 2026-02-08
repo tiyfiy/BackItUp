@@ -4,8 +4,28 @@ Simple CLI tool for backing up databases. Currently supports MongoDB, MySQL, and
 
 ## Installation
 
+Using Make (recommended):
+```bash
+make build
+```
+
+Or using Go directly:
 ```bash
 go build
+```
+
+Other available make targets:
+- `make install` - Install dependencies
+- `make test` - Run tests
+- `make clean` - Remove build artifacts
+- `make fmt` - Format code
+- `make help` - Show all available targets
+
+## Version
+
+Check the installed version:
+```bash
+./BackItUp version
 ```
 
 ## Usage

@@ -9,13 +9,16 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "BackItUp",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
+	Short: "Simple CLI tool for backing up databases",
+	Long: `BackItUp is a simple yet powerful CLI tool for backing up your databases.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+Currently supports:
+  - MongoDB
+  - MySQL
+  - PostgreSQL
+
+Use the database-specific subcommands to configure and run backups.
+All backups are stored in the BACKUP/ directory organized by database type.`,
 }
 
 func Execute() {
@@ -26,5 +29,5 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	// Root command flags can be added here if needed
 }

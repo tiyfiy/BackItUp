@@ -1,2 +1,38 @@
+# Environment files
 .env
 config.yaml
+
+# Binary
+BackItUp
+backitup
+
+# Backup directories
+BACKUP/
+
+# Build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+dist/
+build/
+
+# Test binaries
+*.test
+*.out
+
+# Coverage files
+*.coverprofile
+coverage.html
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
