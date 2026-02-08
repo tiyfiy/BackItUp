@@ -28,6 +28,15 @@ Check the installed version:
 ./BackItUp version
 ```
 
+## List Backups
+
+View all available backups with sizes and timestamps:
+```bash
+./BackItUp list
+```
+
+This will show all backups organized by database type (MongoDB, MySQL, PostgreSQL) with their file sizes and creation dates.
+
 ## Usage
 
 ### MongoDB
