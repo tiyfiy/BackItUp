@@ -50,6 +50,51 @@ View all available backups with sizes and timestamps:
 
 This will show all backups organized by database type (MongoDB, MySQL, PostgreSQL) with their file sizes and creation dates.
 
+## Restore from Backup
+
+Restore a database from a previously created backup:
+
+```bash
+# Interactive mode - select from available backups
+./BackItUp restore mongodb
+./BackItUp restore mysql
+./BackItUp restore postgresql
+
+# Restore latest backup automatically
+./BackItUp restore mysql --latest
+
+# Restore specific backup file
+./BackItUp restore postgresql --file BACKUP/postgresql/mydb.sql
+```
+
+The restore command will:
+- Show available backups with timestamps
+- Ask for confirmation before restoring
+- Use the appropriate database tool (mongorestore, mysql, psql)
+
+## Cleanup Old Backups
+
+Manage backup storage with retention policies:
+
+```bash
+# Keep only last 30 days of MySQL backups
+./BackItUp cleanup mysql --days 30
+
+# Keep only 5 most recent PostgreSQL backups
+./BackItUp cleanup postgresql --keep 5
+
+# Clean up all databases at once
+./BackItUp cleanup all --days 7
+
+# Preview what would be deleted (dry run)
+./BackItUp cleanup mysql --days 30 --dry-run
+```
+
+The cleanup command helps you:
+- Save disk space by removing old backups
+- Maintain retention policies
+- Preview changes with `--dry-run` before actual deletion
+
 ## Usage
 
 ### MongoDB
