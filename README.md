@@ -125,6 +125,28 @@ This displays:
 - Instructions for setting up crontab
 - Pro tips for combining with cleanup
 
+## Backup Health Analysis (Doctor)
+
+Get a comprehensive health checkup for your backups with smart analysis and recommendations:
+
+```bash
+./BackItUp doctor
+```
+
+The doctor command provides:
+- 📊 **Trend Visualization**: Beautiful ASCII charts showing backup size trends over time
+- 📈 **Growth Rate Analysis**: Track how fast your databases are growing
+- ⚠️ **Anomaly Detection**: Automatically detect unusual backup sizes or scheduling gaps
+- 💊 **Health Score**: Overall backup health rating (0-100)
+- 💡 **Smart Recommendations**: Personalized suggestions to optimize your backup strategy
+- 📦 **Statistics**: Total backups, storage usage, date ranges, and averages
+
+Perfect for:
+- Understanding your backup patterns
+- Detecting potential issues before they become problems
+- Optimizing storage usage
+- Making data-driven decisions about backup retention
+
 ## Usage
 
 **Note:** All backups are now automatically timestamped to prevent overwrites!
